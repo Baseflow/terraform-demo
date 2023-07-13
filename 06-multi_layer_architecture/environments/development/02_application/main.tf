@@ -47,5 +47,5 @@ provider "kubernetes" {
 # Deploy the application module
 module "application" {
   source = "../../../../modules/application/"
-  title = "Welcome to Azure Kubernetes Service (AKS)"
+  title  = "Welcome to Azure Kubernetes Service (AKS)"
 }

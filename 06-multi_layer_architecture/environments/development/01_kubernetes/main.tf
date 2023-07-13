@@ -42,6 +42,7 @@ module "network" {
   }]
 }
 
+# Notice how we use indexers on arrays from the output of another module
 module "kubernetes" {
   source                                = "../../../../modules/kubernetes/"
   resource_group_name                   = module.resource_group.resource_group_name
@@ -54,5 +55,4 @@ module "kubernetes" {
   aks_node_count                        = 2
   aks_vm_size                           = "Standard_DS2_v2"
   aks_cluster_name                      = "demo-${var.environment}-aks"
-
 }

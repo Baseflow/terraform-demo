@@ -45,5 +45,5 @@ variable "resource_group_location" {
 
 variable "aks_subnet_id" {
   description = "The subnet to have the aks nodes reside in"
-  type = string
+  type        = string
 }

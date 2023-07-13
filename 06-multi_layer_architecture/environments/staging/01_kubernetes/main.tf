@@ -30,18 +30,19 @@ module "network" {
   source                  = "../../../../modules/network/"
   resource_group_name     = module.resource_group.resource_group_name
   resource_group_location = module.resource_group.resource_group_location
-  vnet_address_space      = "10.220.0.0/15" # ranges 	10.220.0.1 - 10.221.255.254
+  vnet_address_space      = "10.224.0.0/15" # ranges 	10.224.0.1 - 10.225.255.254
   vnet_name               = "aks_vnet"
   subnets = [{
     name           = "aks-subnet"
-    address_prefix = "10.220.0.0/16" # ranges 	10.220.0.1 - 10.220.255.254
+    address_prefix = "10.224.0.0/16" # ranges 	10.224.0.1 - 10.224.255.254
     },
     {
       name           = "ingress-appgateway-subnet"
-      address_prefix = "10.221.0.0/16" # ranges 	10.221.0.1 - 10.221.255.254
+      address_prefix = "10.225.0.0/16" # ranges 	10.225.0.1 - 10.225.255.254
   }]
 }
 
+# Notice how we use indexers on arrays from the output of another module
 module "kubernetes" {
   source                                = "../../../../modules/kubernetes/"
   resource_group_name                   = module.resource_group.resource_group_name
