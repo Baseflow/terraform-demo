@@ -137,6 +137,11 @@ I'd rather work with separate environment directories:
   workspaces from upper levels.
 
 
+| Development | Staging     | Production  |
+|-------------|-------------|-------------|
+| Deployment  | Deployment  | Deployment  | 
+
+
 ## Multi layer architecture
 Why is it needed?
 Additional benefits
